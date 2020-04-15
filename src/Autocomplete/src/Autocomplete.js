@@ -6,13 +6,13 @@ import Results from "./components/Results";
 const useStyles = createUseStyles({
   paper: {
     width: "100%",
-    borderRadius: "8px",
+    borderRadius: "7px",
     boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
   },
   paperWithResults: {
     position: "relative",
     boxShadow: "0px 0px 0px -1px rgba(0,0,0,0.2), 0px 0px 1px 0px rgba(0,0,0,0.14), 0px 0px 3px 0px rgba(0,0,0,0.12)",
-    borderRadius: "8px",
+    borderRadius: "7px",
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0
   }
