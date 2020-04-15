@@ -146,10 +146,11 @@ class ClickAndScroll extends React.Component {
 
   render() {
     const { classes, sections } = this.props;
+    console.log(this.props.styles)
 
     return (
       <div className={classes.wrapper}>
-        <div className={classes.boxBlue}>
+        <div className={{...classes.boxBlue, ...this.props.styles}}>
           <h1 className={classes.title}>Scroll & Click</h1>
         </div>
         <div className={classes.leftWrapper}>
