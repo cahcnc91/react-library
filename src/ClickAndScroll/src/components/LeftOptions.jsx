@@ -16,24 +16,16 @@ const styles = {
   }
 }
 
-const LeftOptions = ({
-  activeSection,
-  handleChangeActiveSection,
-  handleClickSection,
-  sections,
-  classes
-}) => {
+const LeftOptions = (props) => {
 
   return (
-    <div className={classes.list}>
-      {sections.map((item, index) => (
+    <div className={props.classes.list}>
+      {props.sections.map((item, index) => (
         <LeftOptionItem
           key={index}
-          activeSection={activeSection}
           itemIndex={index}
           item={item.title}
-          handleChangeActiveSection={handleChangeActiveSection}
-          handleClickSection={handleClickSection}
+         {...props}
         />
       ))}
     </div>

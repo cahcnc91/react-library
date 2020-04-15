@@ -25,7 +25,7 @@ const styles = {
       width: "100%",
     },
   },
-  boxBlue: {
+  boxHeader: {
     width: "100%",
     height: "10%",
     display: "flex",
@@ -43,6 +43,9 @@ const styles = {
     display: "flex",
     flexDirection: "row",
   },
+  test: {
+    backgroundColor: "#009bce"
+  }
 };
 
 class ClickAndScroll extends React.Component {
@@ -146,11 +149,10 @@ class ClickAndScroll extends React.Component {
 
   render() {
     const { classes, sections } = this.props;
-    console.log(this.props.styles)
 
     return (
       <div className={classes.wrapper}>
-        <div className={{...classes.boxBlue, ...this.props.styles}}>
+        <div className={classes.boxHeader} style={{backgroundColor: this.props.style.backgroundColor}}>
           <h1 className={classes.title}>Scroll & Click</h1>
         </div>
         <div className={classes.leftWrapper}>
@@ -159,6 +161,7 @@ class ClickAndScroll extends React.Component {
             handleChangeActiveSection={this.handleChangeActiveSection}
             handleClickSection={this.handleClickSection}
             sections={sections}
+            style={this.props.style}
           />
           <div ref={this.filtersWrap} className={classes.sectionsWrap}>
             {sections.map((section, i) => (

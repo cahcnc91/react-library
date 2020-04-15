@@ -59,9 +59,10 @@ const sections = [
 ];
 
 const styles = {
- backgroundColor: '#009bce'
+  color: '#b0e0e6',
+  backgroundColor: '#009bce',
 }
 
 export default { title: "ClickAndScroll" };
 
-export const withFourSections = () => <ClickAndScroll sections={sections} styles={styles}/>;
+export const withFourSections = () => <ClickAndScroll sections={sections} style={styles}/>;
