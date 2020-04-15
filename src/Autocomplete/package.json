@@ -1,7 +1,7 @@
 {
     "name": "cahcnc91-autocomplete",
     "description": "Autocomplete component",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "license": "MIT",
     "author": "cahchc91",
     "main": "dist/index.js",
