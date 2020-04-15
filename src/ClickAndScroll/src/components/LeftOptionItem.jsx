@@ -3,7 +3,7 @@ import injectSheet from "react-jss";
 
 const stylesT = {
   text: (props) => ({
-    color: props.style.backgroundColor,
+    color: props.backgroundColor,
     fontFamily: "'Lucida Console', Courier, monospace;",
     opacity: 1,
   })
@@ -13,7 +13,7 @@ const stylesS = {
   listItem: (props) => ({
     "&:hover": {
       // todo: use pallete colors
-      backgroundColor: props.style.color
+      backgroundColor: props.color
     },
     width: "100%",
     display: "flex",
@@ -22,7 +22,7 @@ const stylesS = {
   }),
   selectedItem: (props) => ({
     // todo: use palette colors
-    backgroundColor: props.style.color,
+    backgroundColor: props.color,
     color: "#28b485",
     width: "100%",
     display: "flex",
@@ -48,8 +48,14 @@ const Title = (props) => (
   <h3 className={props.classes.text}>{props.children}</h3>
 );
 
+ListItem.defaultProps = {
+  color:  "#B7E2AB "
+};
 const StyledListItem = injectSheet(stylesS)(ListItem);
 
+Title.defaultProps = {
+  backgroundColor: "#55c57a"
+}
 const StyledTitle = injectSheet(stylesT)(Title);
 
 const LeftOptionItem = (props) => {
@@ -57,6 +63,7 @@ const LeftOptionItem = (props) => {
     props.handleClickSection(true);
     props.handleChangeActiveSection(props.itemIndex);
   };
+  console.log(props)
   return (
     <StyledListItem {...props} handleClick={handleClick}/>
   );

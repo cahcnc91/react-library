@@ -2,6 +2,7 @@ import React from "react";
 import withStyles from "react-jss";
 import LeftOptions from "./components/LeftOptions";
 import Section from "./components/Section";
+import injectSheet from "react-jss";
 
 const styles = {
   wrapper: {
@@ -25,14 +26,6 @@ const styles = {
       width: "100%",
     },
   },
-  boxHeader: {
-    width: "100%",
-    height: "10%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#55c57a",
-  },
   title: {
     color: "#fff",
     fontFamily: "'Lucida Console', Courier, monospace",
@@ -47,6 +40,27 @@ const styles = {
     backgroundColor: "#009bce"
   }
 };
+
+const stylesB = {
+  header: (props) => ({
+    width: "100%",
+    height: "10%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: props.backgroundColor
+  })
+};
+
+const Box = props => (
+  <div className={props.classes.header}>{props.children}</div>
+);
+
+Box.defaultProps = {
+  backgroundColor: "#55c57a",
+}
+
+const StyledBox = injectSheet(stylesB)(Box);
 
 class ClickAndScroll extends React.Component {
   constructor(props) {
@@ -152,16 +166,15 @@ class ClickAndScroll extends React.Component {
 
     return (
       <div className={classes.wrapper}>
-        <div className={classes.boxHeader} style={{backgroundColor: this.props.style.backgroundColor}}>
+        <StyledBox {...this.props}>
           <h1 className={classes.title}>Scroll & Click</h1>
-        </div>
+        </StyledBox>
         <div className={classes.leftWrapper}>
           <LeftOptions
             activeSection={this.state.activeSection}
             handleChangeActiveSection={this.handleChangeActiveSection}
             handleClickSection={this.handleClickSection}
-            sections={sections}
-            style={this.props.style}
+            {...this.props}
           />
           <div ref={this.filtersWrap} className={classes.sectionsWrap}>
             {sections.map((section, i) => (

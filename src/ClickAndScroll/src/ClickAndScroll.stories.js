@@ -65,4 +65,6 @@ const styles = {
 
 export default { title: "ClickAndScroll" };
 
-export const withFourSections = () => <ClickAndScroll sections={sections} style={styles}/>;
+export const withPropsBlue = () => <ClickAndScroll sections={sections} {...styles} />
+
+export const withDefaultColors = () => <ClickAndScroll sections={sections} />;
