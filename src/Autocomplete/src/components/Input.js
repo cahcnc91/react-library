@@ -79,7 +79,7 @@ const Input = ({
           placeholder={"Search for..."}
           onChange={e => filterResults(e.target.value)}
           className={classes.input}
-          onClick={() => toggleShowResults(!showResults)}
+          onClick={toggleShowResults}
           onKeyDown={onKeyDown}
         />
         <div className={classes.flexRow1}>

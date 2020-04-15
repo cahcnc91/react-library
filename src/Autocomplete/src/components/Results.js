@@ -1,8 +1,8 @@
 import React from 'react';
-import { createUseStyles } from "react-jss";
+import withStyles from "react-jss";
 import ResultItem from './ResultItem';
 
-const useStyles = createUseStyles({
+const styles = {
   fullHistory: {
     cursor: 'pointer',
     padding: '.5rem 1.1rem',
@@ -25,16 +25,16 @@ const useStyles = createUseStyles({
     padding: ".3rem 1.1rem",
     fontFamily: 'Helvetica, sans-serif'
   }
-});
+};
 
 const Results = ({
   showResults,
   results,
   activeOption,
   changeActiveOption,
-  handleClickItem
+  handleClickItem,
+  classes
 }) => {
-  const classes = useStyles();
 
   return (
     <div className={showResults ? classes.boxResultsWrapper : ''}>
@@ -56,4 +56,4 @@ const Results = ({
   );
 };
 
-export default Results;
+export default withStyles(styles)(Results);

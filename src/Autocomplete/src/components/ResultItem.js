@@ -1,7 +1,7 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
+import withStyles from "react-jss";
 
-const useStyles = createUseStyles({
+const styles = {
   nonSelected: {
     cursor: "pointer",
     display: "flex",
@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
   text: {
     fontFamily: 'Helvetica, sans-serif',
   },
-});
+};
 
 /** displays search items in search drop down */
 const ResultItem = ({
@@ -24,9 +24,9 @@ const ResultItem = ({
   index,
   activeOption,
   changeActiveOption,
-  handleClickItem
+  handleClickItem,
+  classes
 }) => {
-  const classes = useStyles();
 
   return (
     <div
@@ -41,4 +41,4 @@ const ResultItem = ({
   );
 };
 
-export default ResultItem;
+export default withStyles(styles)(ResultItem);
