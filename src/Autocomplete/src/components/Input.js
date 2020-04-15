@@ -60,9 +60,9 @@ const Input = ({
   searchString,
   toggleShowResults,
   onKeyDown,
-  filterResults
+  filterResults,
+  classes
 }) => {
-  const classes = useStyles();
 
   return (
     <div
