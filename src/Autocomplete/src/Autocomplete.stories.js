@@ -76,4 +76,4 @@ const languages = [
 
 export default { title: "Autocomplete" };
 
-export const withText = () => <Autocomplete options={languages}/>;
+export const withLanguages = () => <Autocomplete options={languages}/>;

@@ -53,7 +53,6 @@ class Autocomplete extends React.Component {
 
     // If user clicks outside searchbar and results, it closes showResults
     handleClickOutside(e) {
-      console.log(this.searchbar)
       if (
         this.searchbar.current &&
         !this.searchbar.current.contains(e.target) &&

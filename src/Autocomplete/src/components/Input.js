@@ -1,7 +1,7 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
+import withStyles from "react-jss";
 
-const useStyles = createUseStyles({
+const styles = {
   showResultsBottom: {
     width: "100%",
     padding: "0.1rem",
@@ -52,7 +52,7 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "space-between"
   },
-});
+};
 
 /** universal-search-bar-input */
 const Input = ({
@@ -97,4 +97,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default withStyles(styles)(Input);
