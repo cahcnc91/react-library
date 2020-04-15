@@ -1,0 +1,2 @@
+# ignore all stories.js in src
+src/*.stories.js

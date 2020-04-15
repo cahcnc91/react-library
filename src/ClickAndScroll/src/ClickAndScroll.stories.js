@@ -60,4 +60,4 @@ const sections = [
 
 export default { title: "ClickAndScroll" };
 
-export const withText = () => <ClickAndScroll sections={sections} />;
+export const withFourSections = () => <ClickAndScroll sections={sections} />;
