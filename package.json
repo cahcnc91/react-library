@@ -4,9 +4,9 @@
   "description": "Components for react",
   "main": "index.js",
   "scripts": {
-    "build:components": "lerna bootstrap && lerna exec npm run \"build\"",
+    "build:components": "lerna bootstrap && lerna exec yarn run \"build\"",
     "build": "webpack --config=config/webpack.config.js",
-    "clean": "lerna exec npm run \"clean\"",
+    "clean": "lerna exec yarn run \"clean\"",
     "publish:components": "lerna publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 9001 -c .storybook"
@@ -16,6 +16,8 @@
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
+    "@storybook/cli": "^5.3.18",
+    "@storybook/react": "^5.3.17",
     "autoprefixer": "^9.7.5",
     "babel-loader": "8.0.5",
     "cross-env": "5.2.0",
@@ -29,10 +31,7 @@
     "webpack-cli": "3.2.3"
   },
   "dependencies": {
-    "@storybook/cli": "^5.3.17",
-    "@storybook/react": "^5.3.17",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-jss": "^10.1.1"
   },
   "publishConfig": {
