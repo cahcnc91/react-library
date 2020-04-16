@@ -1,5 +1,7 @@
 import React from "react";
 import withStyles from "react-jss";
+import SearchIcon from "../assets/search.svg";
+import CloseIcon from '../assets/close.svg';
 
 const styles = {
   showResultsBottom: {
@@ -9,28 +11,36 @@ const styles = {
     boxShadow: "none",
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    height: "100%"
+    height: "100%",
   },
   noShowResults: {
-    width: "100%"
+    width: "100%",
   },
   flexRow: {
     display: "flex",
     flexDirection: "row",
     width: "100%",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   divider: {
     backgroundColor: "#AEAEAE",
     width: "1px",
-    height: "1.5rem"
+    height: "1.5rem",
   },
   icon: {
-    marginRight: "10px",
-    fontSize: "1.6rem",
+    margin: "0 10px",
+    height: "1rem",
+    width: '1rem',
     color: "#AEAEAE",
-    cursor: "pointer"
+    cursor: "pointer",
+  },
+  iconClear: {
+    margin: "0 15px",
+    height: ".8rem",
+    width: '.8rem',
+    color: "#AEAEAE",
+    cursor: "pointer",
   },
   input: {
     width: "calc(100% - 45px)",
@@ -39,18 +49,17 @@ const styles = {
     padding: ".8rem 0 .8rem .7rem",
     fontSize: ".9rem",
     "&:focus": {
-      outline: "none"
+      outline: "none",
     },
     "&:placeholder": {
-      fontSize: "1.0rem"
-    }
+      fontSize: "1.0rem",
+    },
   },
   flexRow1: {
     display: "flex",
     flexDirection: "row",
-    width: "45px",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
 };
 
@@ -61,9 +70,8 @@ const Input = ({
   toggleShowResults,
   onKeyDown,
   filterResults,
-  classes
+  classes,
 }) => {
-
   return (
     <div
       className={
@@ -77,7 +85,7 @@ const Input = ({
           type="text"
           autoComplete="off"
           placeholder={"Search for..."}
-          onChange={e => filterResults(e.target.value)}
+          onChange={(e) => filterResults(e.target.value)}
           className={classes.input}
           onClick={toggleShowResults}
           onKeyDown={onKeyDown}
@@ -85,11 +93,9 @@ const Input = ({
         <div className={classes.flexRow1}>
           <div className={classes.divider} />
           {searchString === "" ? (
-              <div>search</div>
-            // <Search className={classes.icon} />
+            <img src={SearchIcon} className={classes.icon} onClick={toggleShowResults}/>
           ) : (
-            // <Clear className={classes.icon} onClick={() => filterResults("")} />
-            <div>clear</div>
+          <img src={CloseIcon} className={classes.iconClear} onClick={() => filterResults("")}/>
           )}
         </div>
       </div>
