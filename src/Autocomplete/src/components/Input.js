@@ -32,14 +32,12 @@ const styles = {
     margin: "0 10px",
     height: "1rem",
     width: '1rem',
-    color: "#AEAEAE",
     cursor: "pointer",
   },
   iconClear: {
     margin: "0 15px",
     height: ".8rem",
     width: '.8rem',
-    color: "#AEAEAE",
     cursor: "pointer",
   },
   input: {

@@ -30,16 +30,16 @@ const rules = [
     },
   },
   {
-    test: /\.(png|jp(e*)g|svg|gif)$/,
+    test: /\.svg$/,
     use: [
       {
-        loader: 'file-loader',
+        loader: 'svg-url-loader',
         options: {
-          name: 'images/[hash]-[name].[ext]',
+          limit: 10000,
         },
       },
-    ]
-  }
+    ],
+  },
 ];
 
 module.exports = rules;
