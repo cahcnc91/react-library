@@ -35,9 +35,6 @@ const styles = {
     height: "90%",
     display: "flex",
     flexDirection: "row",
-  },
-  test: {
-    backgroundColor: "#009bce"
   }
 };
 

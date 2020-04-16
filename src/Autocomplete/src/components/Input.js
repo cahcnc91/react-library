@@ -26,7 +26,7 @@ const styles = {
   divider: {
     backgroundColor: "#AEAEAE",
     width: "1px",
-    height: "1.5rem",
+    height: "1.4rem",
   },
   icon: {
     margin: "0 10px",
