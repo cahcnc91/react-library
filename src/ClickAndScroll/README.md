@@ -3,15 +3,13 @@
 
 ## Installation
 
-Run npm install --save react-library-cahcnc91
+Run npm install --save cahcnc91-click-scroll
 
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
-
 import ClickAndScroll from "cahcnc91-click-scroll";
-import 'react-library-cahcnc91/dist/index.css';
 
 const Content = () => {
   return (
@@ -49,3 +47,28 @@ class Example extends Component {
   }
 }
 ```
+
+For overwriting default colors, provide color and backgroundColor.
+
+```jsx
+
+const styles = {
+  color: '#b0e0e6',
+  backgroundColor: '#009bce',
+}
+
+<ClickAndScroll
+  {...styles}
+  sections={[
+    {
+      title: "TEST 1",
+      component: Content,
+    },
+    {
+      title: "Test 2",
+      component: Content,
+    },
+  ]}
+/>
+```
+
