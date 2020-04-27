@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultItem snapshot renders 1`] = `
+<div
+  className="ResultItem-nonSelected-0-2-1"
+  onClick={[Function]}
+  onMouseOver={[Function]}
+>
+  JavaScript
+</div>
+`;

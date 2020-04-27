@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results snapshot renders 1`] = `
+<div
+  className="Results-boxResultsWrapper-0-2-2"
+>
+  <div
+    className="ResultItem-nonSelected-0-2-4"
+    onClick={[Function]}
+    onMouseOver={[Function]}
+  >
+    C
+  </div>
+  <div
+    className="ResultItem-selected-0-2-5"
+    onClick={[Function]}
+    onMouseOver={[Function]}
+  >
+    C#
+  </div>
+  <div
+    className="ResultItem-nonSelected-0-2-4"
+    onClick={[Function]}
+    onMouseOver={[Function]}
+  >
+    C++
+  </div>
+  <div
+    className="ResultItem-nonSelected-0-2-4"
+    onClick={[Function]}
+    onMouseOver={[Function]}
+  >
+    Clojure
+  </div>
+</div>
+`;
