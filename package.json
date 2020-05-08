@@ -10,7 +10,9 @@
     "publish:components": "lerna publish",
     "test": "jest",
     "jest": {
-      "setupFilesAfterEnv": ["jest-enzyme"],
+      "setupFilesAfterEnv": [
+        "jest-enzyme"
+      ],
       "testEnvironment": "enzyme",
       "testEnvironmentOptions": {
         "enzymeAdapter": "react16"
@@ -48,7 +50,7 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-jss": "^10.1.1",
-    "styled-jss": "^2.2.3"
+    "react-dom": "^16.13.1",
+    "react-jss": "^10.1.1"
   }
 }
