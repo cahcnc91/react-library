@@ -1,7 +1,7 @@
 {
     "name": "cahcnc91-click-scroll",
     "description": "Click and scroll component",
-    "version": "1.0.12",
+    "version": "1.0.14",
     "license": "MIT",
     "author": "cahchc91",
     "main": "dist/index.js",
