@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "react-jss";
-import SearchIcon from "../assets/search.svg";
-import CloseIcon from '../assets/close.svg';
+import CloseIcon from './CloseIcon';
+import SearchIcon from "./SearchIcon";
 
 const styles = {
   showResultsBottom: {
@@ -33,12 +33,14 @@ const styles = {
     height: "1rem",
     width: '1rem',
     cursor: "pointer",
+    fill: "#AEAEAE"
   },
   iconClear: {
     margin: "0 15px",
     height: ".8rem",
     width: '.8rem',
     cursor: "pointer",
+    fill: "#AEAEAE"
   },
   input: {
     width: "calc(100% - 45px)",
@@ -91,9 +93,9 @@ const Input = ({
         <div className={classes.flexRow1}>
           <div className={classes.divider} />
           {searchString === "" ? (
-            <img src={SearchIcon} className={classes.icon} onClick={toggleShowResults}/>
+            <SearchIcon classes={classes.icon} onClick={toggleShowResults}/>
           ) : (
-          <img src={CloseIcon} className={classes.iconClear} onClick={() => filterResults("")}/>
+            <CloseIcon classes={classes.iconClear} filterResults={filterResults}/>
           )}
         </div>
       </div>

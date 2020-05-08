@@ -63,7 +63,6 @@ class Autocomplete extends React.Component {
     }
 
   filterResults(v) {
-    console.log("here")
     if (v === "") {
       this.setState({ searchString: v, results: this.props.options, activeOption: -1 });
       return;

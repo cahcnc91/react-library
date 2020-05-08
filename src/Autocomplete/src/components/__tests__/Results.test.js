@@ -1,15 +1,11 @@
 import React from "react";
-import renderer from "react-test-renderer";
-import { render, shallow } from "enzyme";
+import { render } from "enzyme";
 import Results from "../Results";
-import ResultItem from "../ResultItem";
 
 const handleClickItem = () => {
-  console.log("test");
 };
 
 const changeActiveOption = () => {
-  console.group("test1");
 };
 
 const languages = [
@@ -36,8 +32,9 @@ const languages = [
   ];
 
 describe("Results", () => {
-  test("snapshot renders", () => {
-    const component = renderer.create(
+  let component;
+  beforeAll(() => {
+    component = render(
       <Results
         showResults={true}
         results={languages}
@@ -46,23 +43,15 @@ describe("Results", () => {
         changeActiveOption={changeActiveOption}
       />
     );
-    let tree = component.toJSON();
+  });
+  test("snapshot renders", () => {
+    let tree = component.html();
     expect(tree).toMatchSnapshot();
   });
 
   it("renders wrapper and all list options", () => {
-    const wrapper = render(
-      <Results
-        showResults={true}
-        results={languages}
-        activeOption={1}
-        handleClickItem={handleClickItem}
-        changeActiveOption={changeActiveOption}
-      />
-    );
-
     // tests wrapper class
-    expect(wrapper.find('Results-boxResultsWrapper-0-2-2')).toBeDefined();
-    expect(wrapper.children()).toHaveLength(languages.length);
+    expect(component.find('Results-boxResultsWrapper-0-2-2')).toBeDefined();
+    expect(component.children()).toHaveLength(languages.length);
   });
 });

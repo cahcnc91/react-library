@@ -1,7 +1,7 @@
 import React from "react";
-import withStyles from "react-jss";
+import {createUseStyles} from 'react-jss'
 
-const styles = {
+const useStyles = createUseStyles({
   nonSelected: {
     cursor: "pointer",
     display: "flex",
@@ -16,7 +16,7 @@ const styles = {
   text: {
     fontFamily: 'Helvetica, sans-serif',
   },
-};
+});
 
 /** displays search items in search drop down */
 const ResultItem = ({
@@ -25,14 +25,15 @@ const ResultItem = ({
   activeOption,
   changeActiveOption,
   handleClickItem,
-  classes
 }) => {
+  const classes = useStyles();
 
   return (
     <div
       className={
         activeOption === index ? classes.selected : classes.nonSelected
       }
+      data-test={`result-item-${item.id}`}
       onClick={() => handleClickItem(item)}
       onMouseOver={() => changeActiveOption(index)}
     >
@@ -41,4 +42,4 @@ const ResultItem = ({
   );
 };
 
-export default withStyles(styles)(ResultItem);
+export default ResultItem;
